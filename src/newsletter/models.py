@@ -8,4 +8,4 @@ class Signup(models.Model):
 	updated   = models.DateTimeField(auto_now=True, auto_now_add=False)
 
 	def __unicode__(self):
-		return self.email 
+		return self.full_name 
