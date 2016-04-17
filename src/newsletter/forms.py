@@ -1,6 +1,12 @@
 from django import forms 
 from .models import Signup
 
+class ContactForm(forms.Form):
+	full_name = forms.CharField(required=False)
+	email     = forms.EmailField()
+	message   = forms.CharField(widget=forms.Textarea)
+
+
 class SignupForm(forms.ModelForm):
 	class Meta:
 		model = Signup
@@ -10,11 +16,9 @@ class SignupForm(forms.ModelForm):
 		email = self.cleaned_data.get('email')
 		email_base, provider = email.split('@')
 		domain, extension = provider.split('.')
-		print extension
-
-		if not domain == 'gmail'	 or not domain == 'outlook':
-			raise forms.ValidationError('Please enter a email from gmail or outlook')
-		if not extension == 'com': #or not extension == 'com.br':
-			raise forms.ValidationError('Please enter a valid email')
+		#if not domain == 'gmail'	 or not domain == 'outlook':
+		#	raise forms.ValidationError('Please enter a email from gmail or outlook')
+		if not extension == 'edu': #or not extension == 'com.br':
+			raise forms.ValidationError('Please use a valid .EDU email')
 
 		return email 
