@@ -13,7 +13,7 @@ from .forms import ContactForm, SignupForm
 def home(request):
 
 	form = SignupForm(request.POST or None)
-	title = 'Welcome !'
+	title = 'Try Django 1.8'
 	context = {
 		'title': title,
 		'form': form,
@@ -53,17 +53,9 @@ def sending_email(form_name,form_email,form_message):
 			except BadHeaderError:
 				return HttpResponse('Invalid header found')
 
-def contact_thanks(request):
-	context = {
-		'title' : 'Thanks You',
-		'message1':'We are glad with your contact',
-		'message2': 'We are going to be in touch as soon as possible',
-	}
-	return render(request, 'thanks.html', context)
-
 def contact(request):
 
-	title = 'Contact'
+	title = 'Contact Us'
 	form = ContactForm(request.POST or None)
 	context = {
 		'title': title, 
@@ -79,8 +71,10 @@ def contact(request):
 		form_message = form.cleaned_data.get('message')
 
 		sending_email(form_name,form_email,form_message)
-		
-		return redirect('/thanks/')
-	else:
 
-		return render(request, 'contact.html', context)
+		context = {
+			'title':'Thank you for contacting us',
+			'message': 'We\'ll be in touch as soon as possible', 
+		}
+
+	return render(request, 'contact.html', context)

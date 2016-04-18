@@ -11,18 +11,23 @@
     <title>{% block head_title %}{% endblock %}|MVP Landing</title>
     {% include 'head-css.html' %}
 
+        <style>
+        {% block style %}{% endblock %}
+        </style>
+
+
   </head>
 
-  {% include 'nav.html' %}
-
   <body>
-    <div class="container">
+      {% include 'nav.html' %}
 
-      {% block jumbotron %}{% endblock %}
+      <div class ="container">
+        {% block jumbotron %}{% endblock %}
 
-      {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
+      </div>
 
-    </div>
+
 
     <!-- Core JavaScript
     ================================================== -->

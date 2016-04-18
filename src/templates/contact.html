@@ -3,14 +3,27 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<h3>{{ message }}</h3>
 
-<form method="POST" action="">{% csrf_token %}
+{% if message %}
+<div class="row">
+	<div class="col-sm-12">
+		<h1 class="text-align-center">{{ title }}</h1>
+		<p class=" lead text-align-center">{{ message }}</p>
+	</div>	
+</div>
 
-	{{ form|crispy }}
-	<input type="submit" value="Submit"/>
+{% else %} 
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+				<h1 class="text-align-center">{{ title }}</h1>
 
-</form>
+		<form method="POST" action="">{% csrf_token %}
 
+			{{ form|crispy }}
+			<input class="btn btn-primary" type="submit" value="Submit"/>
+
+		</form>
+	</div>
+</div>
+{% endif %}
 {% endblock %}
