@@ -10,7 +10,7 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', 'newsletter.views.home', name='home'),
     url(r'^contact/', 'newsletter.views.contact', name='contact'),
-    url(r'^about/', 'tryDjango18.views.about', name='about'),
+    url(r'^about/', 'newsletter.views.about', name='about'),
 
 
 
