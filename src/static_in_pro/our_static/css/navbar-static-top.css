@@ -4,8 +4,34 @@ body {
 
 .navbar-static-top {
   margin-bottom: 19px;
+  background-color:  #183805;
+  border-color:  #1a5019;
+  color: #FFF;
 }
 
 .text-align-center {
   text-align: center;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFF;
+}
+.navbar-default .navbar-brand:hover {
+    color: #777;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #999;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent !important; 
+}
+
+.navbar-toggle:hover {
+   background-color: #1a5019 !important;
+}
+
+.navbar-toggle {
+   background-color: #183805 !important;
 }

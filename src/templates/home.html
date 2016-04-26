@@ -4,12 +4,21 @@
 
 <style>
 {% block style %}
+.navbar-static-top{
+	margin-bottom: 0px;
+}
 
+.jumbotron{
+	background-color: #183805;
+	color: #FFF;
+}
 {% endblock %}
 </style>
 
 {% block jumbotron %}
+
   <div class="jumbotron">
+  <div class="container">
 	<div class="row">
 		<div class="col-sm-6">
 			<h1>{{ title }}</h1>
@@ -17,14 +26,16 @@
 		    The goal is to help you launch as soon as possible with the least 
 		    amount of investment using time or money. <strong>Join Us today</strong> </p>
 		    <p>
-		    	<a class="btn btn-lg btn-primary" href="#" role="button">Join Us &raquo;</a>
+		    	<a class="btn btn-lg btn-default" href="#" role="button">Join Us &raquo;</a>
 		    </p>
 		 </div>
 		 <div class="col-sm-6" style="background-color:black;height:300px;">
 
 		 </div>
 	</div>
+	</div>
   </div>
+
 {% endblock %}
 
 {% block content %}
