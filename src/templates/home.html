@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block head_title %}Welcome{% endblock %}
 {% load crispy_forms_tags %}
+{% load staticfiles %}
 
 <style>
 {% block style %}
@@ -18,7 +19,7 @@
 {% block jumbotron %}
 
   <div class="jumbotron">
-  <div class="container">
+   <div class="container">
 	<div class="row">
 		<div class="col-sm-6">
 			<h1>{{ title }}</h1>
@@ -29,11 +30,11 @@
 		    	<a class="btn btn-lg btn-default" href="#" role="button">Join Us &raquo;</a>
 		    </p>
 		 </div>
-		 <div class="col-sm-6" style="background-color:black;height:300px;">
-
+		 <div class="col-sm-6">
+		  <iframe width="560" height="315" src="https://www.youtube.com/embed/8huq9ZnkWUw" frameborder="0" allowfullscreen></iframe>
 		 </div>
 	</div>
-	</div>
+   </div>
   </div>
 
 {% endblock %}
@@ -52,14 +53,19 @@
 		</div>
 		<div class="col-sm-3">
 			<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+			<img src="{% static 'img/django.png' %}" class="img-responsive"/>
 		</div>
 
 		<div class="col-sm-3">
 			<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+			<img src="{% static 'img/pythonlogo.jpg' %}" class="img-responsive"/>
+
 		</div>
 
 		<div class="col-sm-3">
 			<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+			<img src="{% static 'img/bootstrap.png' %}" class="img-responsive"/>
+
 		</div>
 	</div>
 
