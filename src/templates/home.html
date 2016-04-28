@@ -42,7 +42,7 @@
 {% block content %}
 	<div class="row">
 		<div class="col-sm-3 pull-right">
-			<p class="lead text-align-center">Welcome</p>
+			<p class="lead text-align-center">Sign Up Now</p>
 
 			<form method="POST" action="">{% csrf_token %}
 
@@ -52,20 +52,33 @@
 			</form>
 		</div>
 		<div class="col-sm-3">
-			<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
-			<img src="{% static 'img/django.png' %}" class="img-responsive"/>
+			<p class="lead text-align-center">Django &amp; Bootstrap</p>
+			<div class="row">
+				<div class="col-sm-6">
+					<img src="{% static 'img/django.png' %}" class="img-responsive"/>
+				</div>
+				<div class="col-sm-6">
+					<img src="{% static 'img/bootstrap.png' %}" class="img-responsive"/>
+				</div>
+			</div>
 		</div>
 
 		<div class="col-sm-3">
-			<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
-			<img src="{% static 'img/pythonlogo.jpg' %}" class="img-responsive"/>
-
+			<p class="lead text-align-center">Created for Starters
+				<span class="fa-stack fa-md fa-4x">
+					<i class="fa fa-comment-o fa-stack-2x"></i>
+					<i style="color:yellow;" class="fa fa-bolt fa-stack-1x"></i>
+				</span>
+			</p>			
 		</div>
 
 		<div class="col-sm-3">
-			<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
-			<img src="{% static 'img/bootstrap.png' %}" class="img-responsive"/>
-
+			<p class="lead text-align-center">Always Open Source
+			<span class="fa-stack fa-lg fa-4x">
+				<i class="fa fa-circle-o-notch fa-stack-2x"></i>
+				<i class="fa fa-github fa-stack-1x"></i>
+			</span>
+			</p>
 		</div>
 	</div>
 
