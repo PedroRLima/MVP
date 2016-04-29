@@ -2,18 +2,15 @@ from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from django.shortcuts import redirect
-
 from random import randint
-
 from .forms import ContactForm, SignupForm 
+from .models import Signup
 
 
-# Create your views here.
 def home(request):
 
 	form = SignupForm(request.POST or None)
-	title = 'Try Django 1.8'
+	title = 'Sign Up Now'
 	context = {
 		'title': title,
 		'form': form,
@@ -29,7 +26,13 @@ def home(request):
 
 		instance.save()
 		context = {
-			'title': 'Thank you for signing up'
+			'title': 'Thank you!',
+		}
+
+	if request.user.is_authenticated() and request.user.is_staff:
+		queryset = Signup.objects.all().order_by('-timestamp')
+		context= { 
+			'queryset': queryset,
 		}
 
 	return render(request, 'home.html', context)
